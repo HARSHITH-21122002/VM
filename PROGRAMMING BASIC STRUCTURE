@@ -1,0 +1,114 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;//Import Library
+
+public class HelloWorld //Main Class
+{
+    public static void Main(string[] args)  //starting point 
+    {
+        Console.WriteLine ("Try programiz.pro"); //output statement
+    }
+}           
+
+✅ Explanation of Basic Structure:
+
+(•_•)using System; → Imports necessary libraries.
+(•_•)class Program → Defines the main class.
+(•_•)static void Main() → Entry point of the program
+-_____________________________________________________________-
+
+Master Object-Oriented Programming (OOP)
+OOP helps in writing structured and reusable code.
+
+✅ Core OOP Concepts:
+🔹 Class & Object – A blueprint and its instance.
+🔹 Encapsulation – Restricting access to data.
+🔹 Inheritance – Reusing parent class properties.
+🔹 Polymorphism – Using a function in different ways.
+
+EXAMPLE CODE FOR BASIC UNDERSTANDING:
+     using System;  // ✅ Imports the System namespace (needed for Console.WriteLine)
+
+class Car  // ✅ Class Declaration: Defines a blueprint for creating Car objects
+{
+    public string brand;  // ✅ Property: A variable inside the class to store car brand
+
+    public void Honk()  // ✅ Method: A function inside the class that performs an action
+    {
+        Console.WriteLine("Beep Beep!");  // ✅ Prints "Beep Beep!" when Honk() is called
+    }
+}
+
+class Program  // ✅ Another class: The entry point of the program
+{
+    static void Main()  // ✅ Main Method: The starting point of execution
+    {
+        Car myCar = new Car();  // ✅ Object Creation: Creates a new Car object in memory
+
+        myCar.brand = "Toyota";  // ✅ Assigns the value "Toyota" to the brand property of myCar
+
+        Console.WriteLine(myCar.brand);  // ✅ Outputs the brand name (Toyota) to the console
+
+        myCar.Honk();  // ✅ Calls the Honk() method of the myCar object, printing "Beep Beep!"
+    }
+}
+-_____________________________________________________________-
+
+Step 4: Work with Data Structures & Algorithms
+Understanding data structures will improve your coding efficiency.
+
+✅ Important Data Structures:
+🔹 Arrays & Lists – Store multiple values.
+🔹 Stacks & Queues – LIFO/FIFO structures.
+🔹 Dictionaries (HashMaps) – Key-value pairs.
+🔹 Trees & Graphs – Advanced structures for complex data.
+EXAMPLE CODE FOR BASIC UNDERSTANDING:
+  List<int> numbers = new List<int> {1, 2, 3, 4};
+numbers.Add(5);
+Console.WriteLine(numbers[2]);  // Output: 3
+-_____________________________________________________________-
+
+
+Step 5: Practice with Small Projects
+Applying knowledge through projects helps solidify programming structures.
+
+🔹 Simple Projects to Try:
+✅ Calculator App – Use functions & conditionals.
+✅ To-Do List – Practice lists & user input.
+✅ Student Management System – Apply OOP concepts.
+-_____________________________________________________________-
+
+Step:6 Explore Advanced Topics
+Once comfortable with basic structure, explore: ✅ Databases & SQL – Store and retrieve data.
+✅ APIs & Web Development – Communicate between services.
+✅ Multithreading & Asynchronous Programming – Improve performance.
+-_____________________________________________________________-
+
+Step 7: Learn Git for Code Management
+🐱‍👤Use Git to track changes and collaborate.
+///////////////////////////////////////////
+git init                                  |
+git add .                                 |
+git commit -m "First Commit"              |-GIT COMMANDD EXAPLE
+git push origin main                      |
+__________________________________________                                         |
+-_____________________________________________________________-
+
+📌 Step 8: Keep Practicing & Build Bigger Projects
+  .openproject
+
+
+SUMMARY
+🎯 Summary
+Step	Topic
+1	Learn Basics (Variables, Loops, Functions)
+2	Understand Basic Program Structure
+3	Master Object-Oriented Programming (OOP)
+4	Learn Data Structures & Algorithms
+5	Build Small Projects
+6	Explore Advanced Topics (Databases, APIs)
+7	Learn Git for Code Management
+8	Keep Practicing with Bigger Projects
+
+
