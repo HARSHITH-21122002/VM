@@ -1,0 +1,157 @@
+Database Tutorial for Beginners
+A database is an organized collection of data that allows easy access, management, and updating. Databases are used in applications like banking, e-commerce, social media, and business management systems.
+
+1️⃣ Types of Databases
+Relational Databases (SQL) – Data is stored in tables with relationships.
+🔹 Examples: MySQL, SQL Server, PostgreSQL, SQLite
+NoSQL Databases – Data is stored in documents, key-value pairs, or graphs.
+🔹 Examples: MongoDB, Firebase, Redis
+
+-_______________________________________________________________________________________-
+
+2️⃣ SQL (Structured Query Language) Basics
+SQL is used to create, read, update, and delete (CRUD) data in a relational database.
+
+🔹 Basic SQL Commands
+✅ Create a Database
+
+sql
+Copy
+Edit
+CREATE DATABASE MyDatabase;
+✅ Use a Database
+
+sql
+Copy
+Edit
+USE MyDatabase;
+✅ Create a Table
+
+sql----
+CREATE TABLE Students (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    Email VARCHAR(100)
+);
+✅ Insert Data
+
+sql----
+INSERT INTO Students (ID, Name, Age, Email) 
+VALUES (1, 'John Doe', 20, 'john@example.com');
+✅ Retrieve Data
+
+sql---
+SELECT * FROM Students;
+✅ Filter Data
+
+sql---
+SELECT * FROM Students WHERE Age > 18;
+✅ Update Data
+
+sql---
+UPDATE Students SET Email = 'john.doe@example.com' WHERE ID = 1;
+✅ Delete Data
+
+sql---
+DELETE FROM Students WHERE ID = 1;
+-_______________________________________________________________________________________-
+
+3️⃣ Database Relationships
+In relational databases, tables are linked using keys: 🔹 Primary Key (PK) – Uniquely identifies a record in a table.
+🔹 Foreign Key (FK) – Links a record to another table.
+
+🔹 Example: One-to-Many Relationship
+sql---
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100)
+);
+
+CREATE TABLE Enrollments (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(ID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);
+
+-_______________________________________________________________________________________-
+4️⃣ NoSQL Database (MongoDB Example)
+MongoDB stores data in JSON-like documents instead of tables.
+
+✅ Insert Document
+
+json--
+db.students.insertOne({
+    "ID": 1,
+    "Name": "John Doe",
+    "Age": 20,
+    "Email": "john@example.com"
+});
+✅ Find Data
+
+json---
+db.students.find();
+✅ Update Data
+
+json--
+db.students.updateOne({ "ID": 1 }, { $set: { "Email": "john.doe@example.com" } });
+✅ Delete Data
+
+json--
+db.students.deleteOne({ "ID": 1 });
+
+-_______________________________________________________________________________________-
+5️⃣ Connecting Databases to C# (Entity Framework)
+Entity Framework (EF) allows C# applications to interact with databases.
+
+✅ Install Entity Framework Core
+
+sh---
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+✅ Create a DbContext Class
+
+csharp---
+public class ApplicationDbContext : DbContext
+{
+    public DbSet<Student> Students { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlServer("Server=your_server;Database=MyDatabase;Trusted_Connection=True;");
+}
+✅ Define a Model
+
+csharp---
+public class Student
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Email { get; set; }
+}
+✅ Insert Data in C#
+
+csharp----
+using (var context = new ApplicationDbContext())
+{
+    context.Students.Add(new Student { ID = 1, Name = "John", Age = 20, Email = "john@example.com" });
+    context.SaveChanges();
+}
+✅ Retrieve Data
+
+csharp----
+var students = context.Students.ToList();
+foreach (var student in students)
+{
+    Console.WriteLine(student.Name);
+}
+
+
+-_______________________________________________________________________________________-
+6️⃣ Best Practices for Database Management
+🔹 Use Indexing to speed up searches.
+🔹 Backup your database regularly.
+🔹 Normalize data to avoid duplication.
+🔹 Secure your database (Use encryption & authentication).
+🔹 Optimize queries (Use JOIN instead of multiple queries).
