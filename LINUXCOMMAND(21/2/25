@@ -1,0 +1,127 @@
+1️⃣ Basic Linux Commands
+Command	Description
+pwd	Displays the current working directory
+ls	Lists files and directories
+cd <directory>	Changes directory
+mkdir <folder>	Creates a new directory
+rmdir <folder>	Deletes an empty directory
+rm <file>	Deletes a file
+rm -r <folder>	Deletes a directory and its contents
+
+EG:
+  mkdir my_folder  # Creates a folder named 'my_folder'
+  cd my_folder     # Navigates into 'my_folder'
+  pwd             # Shows the current directory
+-------------------------------------------------------------------------------------------------------
+
+2️⃣ File Management Commands
+Command	Description
+touch <file>	Creates a new empty file
+cat <file>	Displays file content
+nano <file>	Opens file in Nano editor
+vi <file>	Opens file in Vi editor
+cp <source> <destination>	Copies file or folder
+mv <source> <destination>	Moves or renames a file
+rm <file>	Deletes a file
+
+EG:
+   touch file.txt  # Creates an empty file
+   echo "Hello" > file.txt  # Writes "Hello" into file.txt
+   cat file.txt  # Displays contents of file.txt
+-------------------------------------------------------------------------------------------------------
+
+3️⃣ User Management Commands
+Command	Description
+whoami	---Shows the current logged-in user
+who	 --- Displays all logged-in users
+id <username> -	Displays user ID and group ID
+adduser <username> ---	Creates a new user
+deluser <username> ---	Deletes a user
+passwd <username> -	---Changes a user's password
+-------------------------------------------------------------------------------------------------------
+4️⃣ Process Management Commands
+Command	Description
+ps	--- Lists currently running processes
+top	--- Shows system resource usage
+kill <PID>	---- Terminates a process by PID
+killall <name>	--- Kills all processes with a specific name
+pkill <name> ---	Kills processes by name
+htop -	Interactive process manager (install with sudo apt install htop)
+EG:
+   ps aux  # Shows all running processes
+   kill 1234  # Kills the process with PID 1234
+
+-------------------------------------------------------------------------------------------------------
+5️⃣ Disk Management Commands
+Command	Description
+df -h	 ---Displays disk usage
+du -sh --- <directory>	Shows folder size
+lsblk	---Lists storage devices
+mount /dev/sdX /mnt	 --- Mounts a partition
+umount /mnt ----	Unmounts a partition
+-------------------------------------------------------------------------------------------------------
+6️⃣ Networking Commands
+Command	Description
+ping <website>	---Checks network connectivity
+curl <URL>	---Fetches a webpage or API data
+wget <URL>---	Downloads a file from the web
+ifconfig -----	Shows IP address (deprecated)
+ip a	---Displays network interfaces
+netstat -tulnp	---Shows open network ports
+EG:
+ping google.com  # Tests connectivity to Google
+wget example.com/file.zip  # Downloads a file from example.com
+
+-------------------------------------------------------------------------------------------------------
+
+7️⃣ Permissions & Ownership Commands
+Command	Description
+chmod 777 <file> ---	Changes file permissions
+chown user:group <file>	----Changes file ownership
+ls -l---	Shows file permissions
+EG:
+  chmod 755 script.sh  # Gives read/write/execute to the owner and read/execute to others
+  chown user1 file.txt  # Changes ownership of file.txt to user1
+-------------------------------------------------------------------------------------------------------
+8️⃣ Package Management Commands
+Command	Description
+sudo apt update	----Updates package lists (Debian-based)
+sudo apt upgrade	----Upgrades installed packages
+sudo apt install <package> ----	Installs a package (Debian)
+sudo yum install <package>	----Installs a package (RHEL-based)
+sudo pacman -S <package>	----Installs a package (Arch-based)
+dpkg -i <file.deb>	-----Installs a .deb package manually
+Example:
+sudo apt update  # Updates package index
+sudo apt install git  # Installs Git
+-------------------------------------------------------------------------------------------------------
+9️⃣ System Monitoring Commands
+Command	Description
+uptime	---Shows system uptime
+free -h	---Displays memory usage
+vmstat	----Shows CPU, memory, and disk stats
+iostat	---Displays CPU and I/O stats
+dmesg	----Shows system boot logs
+-------------------------------------------------------------------------------------------------------
+🔟 Important Shortcuts
+Shortcut	Description
+Ctrl + C	---Stops a running command
+Ctrl + Z	---Suspends a process
+Ctrl + R	---Searches command history
+Ctrl + L	----Clears the terminal
+Tab	-----Auto-completes commands
+!!	---Runs the last command
+-------------------------------------------------------------------------------------------------------
+
+🚀 Summary
+Category         	Commands
+Basic        	             pwd, ls, cd, mkdir, rm
+File Management	          touch, cp, mv, cat, nano
+User Management          	whoami, adduser, passwd
+Process Management	      ps, top, kill
+Disk Management	          df -h, du -sh, lsblk
+Networking	              ping, wget, curl, ip a
+Permissions	              chmod, chown, ls -l
+Package Management	      apt, yum, pacman
+Monitoring	              uptime, free -h, vmstat
+
